@@ -4,28 +4,27 @@
 Phase 0 — Environment & Tooling Setup
 
 ## Completed This Session
-- Agent Zero fork cloned to /c/projects/Pantheon
-- Pantheon directory structure installed under pantheon/
-- Planning docs installed (CLAUDE.md, STATE.md, PHASE_0-2.md)
-- Existing modules migrated (harness, sanctuary, vault, tests)
-- New stubs created (graph, mnemosyne, iris, charon, session, harness.py, redistill_queue)
-- .gitignore updated, docker-compose.yml stub created
+- Step 0.1: GLM-5.1 fallback tested and verified
+  - Ollama installed via winget (v0.21.2)
+  - GLM-5.1 connects via `ollama run glm-5.1:cloud`
+  - Claude Code fallback works via `ollama launch claude --model glm-5.1:cloud`
+  - GitNexus not yet in MCP config (expected — Step 0.3); will be available in fallback sessions once configured
 
 ## In Progress (CRITICAL)
 - None
 
 ## Decisions Made
-- Approach: Option A — clone fresh, layer Pantheon on top of Agent Zero fork
-- Old Pantheon repo archived at /c/projects/Pantheon-old
+- GLM-5.1 fallback: viable once GitNexus is wired up in Step 0.3
+- Fallback command: `ollama launch claude --model glm-5.1:cloud`
+- No manual context dump workaround needed — MCP tools carry over at the Claude Code level
 
 ## Blockers or Questions
 - Agent Zero boot status: not yet verified (Phase 0 Step 0.2)
-- GLM-5.1 fallback status: not yet tested (Phase 0 Step 0.1)
 - Web UI port: not yet chosen (Phase 0 Step 0.2.6)
-- Git remote URL confirmed: https://github.com/Duskript/agent-zero
+- GitNexus not yet installed/configured (Phase 0 Step 0.3)
 
 ## Next Step (one sentence, specific)
-Begin Phase 0 Step 0.1 — ask user about GLM-5.1 fallback test status.
+Begin Phase 0 Step 0.2 — verify Agent Zero fork boots successfully.
 
 ## Stub Status
 - pantheon/pantheon-core/gods/demeter.py: not yet created (Phase 3)
@@ -49,8 +48,8 @@ Needs re-analyze before next session: yes
 ## Git State at Session End
 Remote: https://github.com/Duskript/agent-zero
 Branch: dev
-Last commit pushed: initial setup commit
-Uncommitted work remaining: no
+Last commit pushed: 1de7fdc4 fix: UTF-8 encoding on Windows for sanctuary config and vault tests
+Uncommitted work remaining: yes — pantheon/pantheon-core/tests/test_api.py deleted (intentional)
 
 ## Agent Zero FREE_CHAT Status
 Tested this session: not applicable
