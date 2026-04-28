@@ -38,8 +38,8 @@ Status key: 🔲 Not started | 🔄 In progress | ✅ Complete | ⚠️ Blocked
 | Agent Zero path | — | 0 | |
 | Approach A or B | — | 1 | Wrap+Replace or Gut+Rebuild |
 | Sanctuary injection point | — | 1 | File and function |
-| Web UI port | — | 0 | Set in Step 0.2.6 |
-| Git remote URL | — | 0 | |
+| Web UI port | 50002 (Pantheon) / 50001 (Agent Zero) | 0 | Set in Step 0.2.6 |
+| Git remote URL | https://github.com/Duskript/agent-zero | 0 | |
 | Embedding model | — | 5 | Must be local, no :cloud |
 | Chunk size | — | 5 | tokens with overlap |
 | Hades candidate strategy | — | 6 | Age / Age+density / Manual |

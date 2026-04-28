@@ -15,6 +15,8 @@ Phase 0 — Environment & Tooling Setup
   - Created docker-compose.local.yml (prebuilt image, port 50001)
   - Created .github/workflows/build-dev-image.yml for Phase 7+ builds via ghcr.io
   - Documented Meraki network constraint + workarounds (see memory: project_pantheon_docker_network.md)
+- Step 0.2.5: Stale FAISS index cleared, container restarted, HTTP 200 confirmed, no embedding errors
+- Step 0.2.6: Pantheon docker-compose.yml port set to 50002, STATE.md Key Decisions updated
 
 ## In Progress (CRITICAL)
 - None
@@ -28,12 +30,11 @@ Phase 0 — Environment & Tooling Setup
 - Volume mount override as tactical fallback for individual Agent Zero file changes while on Meraki network
 
 ## Blockers or Questions
-- FAISS index not yet cleared (Phase 0 Step 0.2.5 — next step)
-- GitHub Actions workflow needs one push to test end-to-end
+- GitHub Actions workflow needs one push to test end-to-end (triggered by 0.2 commit)
 - GitNexus not yet installed/configured (Phase 0 Step 0.3)
 
 ## Next Step (one sentence, specific)
-Begin Phase 0 Step 0.2.5 — clear the stale FAISS index inside the agent-zero container.
+Begin Phase 0 Step 0.3 — verify GitNexus installation.
 
 ## Stub Status
 - pantheon/pantheon-core/gods/demeter.py: not yet created (Phase 3)
