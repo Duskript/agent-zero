@@ -1,0 +1,19 @@
+# Pantheon docker-compose.yml
+# DO NOT extend or modify Agent Zero's docker configuration here.
+# Port and volume mounts are set interactively in Phase 0 Step 0.2.6.
+#
+# TODO (Phase 0, Step 0.2.6): replace TODO_PORT with chosen port and confirm volumes
+services:
+  pantheon:
+    build: .
+    ports:
+      - "TODO_PORT:80"
+    volumes:
+      - ./pantheon/.athenaeum:/app/pantheon/.athenaeum
+      - ./pantheon/.planning:/app/pantheon/.planning
+      - ./pantheon/flags:/app/pantheon/flags
+    environment:
+      - OLLAMA_HOST=http://host.docker.internal:11434
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped

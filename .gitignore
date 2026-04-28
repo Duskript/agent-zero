@@ -50,3 +50,25 @@ agent_history.gif
 
 .agent/**
 .claude/**
+
+# ── Pantheon ──────────────────────────────────────────────────────────────────
+
+# Pantheon runtime data — never commit
+pantheon/.athenaeum/.chromadb/
+pantheon/.athenaeum/*.db
+pantheon/.athenaeum/*.db-shm
+pantheon/.athenaeum/*.db-wal
+pantheon/.athenaeum/.state.json
+pantheon/.athenaeum/.hades.lock
+
+# Private Gods — never commit
+pantheon/gods-private/*
+!pantheon/gods-private/.gitkeep
+
+# Iris flags (runtime)
+pantheon/flags/*.md
+!pantheon/flags/.gitkeep
+
+# GitNexus artifacts
+gitnexus_analyze.log
+.gitnexus/

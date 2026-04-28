@@ -1,0 +1,4 @@
+# Hephaestus harness — Stub, filled in Phase 8
+schema_version: 1
+name: hephaestus
+driver: llm

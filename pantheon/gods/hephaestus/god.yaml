@@ -1,0 +1,6 @@
+# Hephaestus — Builder God
+# Stub — filled in Phase 8
+schema_version: 1
+name: hephaestus
+domain: engineering
+description: Software engineering and tooling domain agent.

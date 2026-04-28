@@ -1,0 +1,6 @@
+# Zeus — Orchestrator God
+# Stub — filled in Phase 8 (Zeus & God Registry)
+schema_version: 1
+name: zeus
+domain: orchestration
+description: Primary orchestrator. Routes requests to domain Gods.
