@@ -44,7 +44,7 @@ class SanctuaryConfig:
 
 
 def _parse(path: Path) -> SanctuaryConfig:
-    data = yaml.safe_load(path.read_text())
+    data = yaml.safe_load(path.read_text(encoding="utf-8"))
     vl = data.get("vault_logging", {})
     ui = data.get("ui", {})
     return SanctuaryConfig(

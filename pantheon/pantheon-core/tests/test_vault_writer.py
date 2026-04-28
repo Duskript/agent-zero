@@ -37,7 +37,7 @@ def test_session_file_has_frontmatter():
         sanctuary = make_sanctuary()
         writer.append_turn("session-1", sanctuary, "user", "hello")
         session_dir = Path(tmpdir) / "Codex-SKC/sessions"
-        content = list(session_dir.glob("*.md"))[0].read_text()
+        content = list(session_dir.glob("*.md"))[0].read_text(encoding="utf-8")
         assert "sanctuary: The Studio — Lyric Writing" in content
         assert "god: Apollo" in content
         assert "studio: lyric-writing" in content
@@ -49,7 +49,7 @@ def test_user_turn_written():
         sanctuary = make_sanctuary()
         writer.append_turn("session-1", sanctuary, "user", "what rhymes with fire?")
         session_dir = Path(tmpdir) / "Codex-SKC/sessions"
-        content = list(session_dir.glob("*.md"))[0].read_text()
+        content = list(session_dir.glob("*.md"))[0].read_text(encoding="utf-8")
         assert "[User]: what rhymes with fire?" in content
 
 
@@ -59,7 +59,7 @@ def test_assistant_turn_uses_god_name():
         sanctuary = make_sanctuary()
         writer.append_turn("session-1", sanctuary, "assistant", "desire, empire, entire")
         session_dir = Path(tmpdir) / "Codex-SKC/sessions"
-        content = list(session_dir.glob("*.md"))[0].read_text()
+        content = list(session_dir.glob("*.md"))[0].read_text(encoding="utf-8")
         assert "[Apollo]: desire, empire, entire" in content
 
 
@@ -73,7 +73,7 @@ def test_multiple_turns_appended_to_same_file():
         session_dir = Path(tmpdir) / "Codex-SKC/sessions"
         files = list(session_dir.glob("*.md"))
         assert len(files) == 1
-        content = files[0].read_text()
+        content = files[0].read_text(encoding="utf-8")
         assert "[User]: first" in content
         assert "[Apollo]: second" in content
         assert "[User]: third" in content
