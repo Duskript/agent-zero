@@ -1,0 +1,20 @@
+# Agent Zero — local dev
+#
+# Default: uses prebuilt image (works on Meraki-restricted network)
+# Phase 7+: set A0_IMAGE=ghcr.io/duskript/agent-zero:dev after pushing to dev branch
+#   triggers GitHub Actions build → docker pull ghcr.io/duskript/agent-zero:dev
+#
+# Usage:
+#   docker compose -f docker-compose.local.yml up -d
+#   A0_IMAGE=ghcr.io/duskript/agent-zero:dev docker compose -f docker-compose.local.yml up -d
+#
+# Data persists in ./docker/run/agent-zero/ (/a0 inside container)
+services:
+  agent-zero:
+    container_name: agent-zero
+    image: ${A0_IMAGE:-agent0ai/agent-zero:latest}
+    volumes:
+      - ./docker/run/agent-zero:/a0
+    ports:
+      - "50001:80"
+    restart: unless-stopped

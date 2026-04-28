@@ -72,3 +72,6 @@ pantheon/flags/*.md
 # GitNexus artifacts
 gitnexus_analyze.log
 .gitnexus/
+
+# Agent Zero /a0 runtime data — volume mount, never commit
+docker/run/agent-zero/
